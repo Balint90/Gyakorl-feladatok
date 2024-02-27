@@ -23,3 +23,22 @@ const bucket = list.reduce((acc, currentItem) => {
 }, { bool: [], number: [], string: [], list: [], object: [] });
 
 console.log(bucket);
+
+//Feladat 2
+
+async function add(numA, numB) {
+  return numA + numB;
+}
+
+function sub(numA, numB) {
+  return new Promise(resolve => resolve(numA - numB));
+}
+
+function mul(numA, numB) {
+  return numA * numB;
+}
+
+add(5, 4)
+  .then(sum => add(2, 1).then(innerSum => sub(sum, mul(3, innerSum))))
+  .then(result => sub(result, 6))
+  .then(console.log);
