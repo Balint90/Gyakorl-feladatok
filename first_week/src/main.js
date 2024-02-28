@@ -42,3 +42,28 @@ add(5, 4)
   .then(sum => add(2, 1).then(innerSum => sub(sum, mul(3, innerSum))))
   .then(result => sub(result, 6))
   .then(console.log);
+
+//Feladat 3
+
+function powCalc(n, x) {
+  let result = 1;
+  let intermediateValues = [];
+
+  if (x === 0) {
+    return { result: 1, intermediateValues };
+  }
+
+  for (let i = 1; i <= x; i++) {
+    result *= n;
+    intermediateValues.push(result);
+  }
+
+  return {
+    result: result,
+    intermediateValues: intermediateValues,
+  };
+}
+
+console.log(powCalc(2, 5));
+console.log(powCalc(2, 10));
+console.log(powCalc(5, 2));
