@@ -60,7 +60,6 @@ function powCalc(n, x) {
 //Output
 console.log(bucket);
 const task1Container = document.createElement('div');
-task1Container.classList.add('card');
 
 task1Container.innerHTML =
     `<h2 class="mt-3">Task 1:</h2><div class="card">
